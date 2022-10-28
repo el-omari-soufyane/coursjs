@@ -4,7 +4,7 @@
 const annuaire = [];
 
 /**
- * 
+ *
  * @param {String} message Le message à afficher à l'écran
  * Tester si la chaine entrée contient que des lettres
  * @returns la chaine écrit
@@ -19,7 +19,7 @@ const enterAlphabetic = (message) => {
 };
 
 /**
- * 
+ *
  * @param {String} message Le message à afficher à l'écran
  * Tester si la chaine entrée contient que des chiffres
  * @returns la chaine écrit
@@ -34,7 +34,7 @@ const enterNumeric = (message) => {
 };
 
 /**
- * 
+ *
  * Ajouter le contact à l'annuaire.
  * @returns le contact si N° n'existe pas, null sinon
  */
@@ -50,7 +50,7 @@ const addTelephone = () => {
 };
 
 /**
- * 
+ *
  * Supprimer le contact de l'annuaire.
  * @returns le contact supprimé, null sinon
  */
@@ -65,7 +65,7 @@ const removeTelephone = () => {
 };
 
 /**
- * 
+ *
  * @param {String} telephone Le N° téléphone à chercher
  * @returns le contact s'il existe, null sinon
  */
@@ -73,17 +73,16 @@ const removeTelephone = () => {
 const searchByTelephone = (telephone) =>
   annuaire.find((p) => p.telephone == telephone);
 
-  /**
- * 
+/**
+ *
  * @param {String} nom Le Nom du contact
  * @returns le contact s'il existe, null sinon
  */
 
-const searchByNom = (nom) => annuaire.findAll((p) => p.nom == nom);
-
+const searchByNom = (nom) => annuaire.filter((p) => p.nom == nom);
 
 /**
- * 
+ *
  * @param {Array} annuaireList La liste des contacts à afficher
  */
 
@@ -101,7 +100,7 @@ const showAnnuaire = (annuaireList) => {
 };
 
 /**
- * 
+ *
  * Fonction pour afficher le menu et les operations de recherche
  */
 
@@ -130,7 +129,7 @@ const search = () => {
 };
 
 /**
- * 
+ *
  * Annuaire App
  */
 
