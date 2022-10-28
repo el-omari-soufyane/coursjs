@@ -88,6 +88,7 @@ const searchByNom = (nom) => annuaire.filter((p) => p.nom == nom);
 
 const showAnnuaire = (annuaireList) => {
   let list = "Annuaire :\n==============\n";
+  if(annuaireList.length == 0) return alert(list + "Liste vide !")
   annuaireList.forEach(
     (p, index) =>
       (list += `\nContact #${
@@ -96,7 +97,7 @@ const showAnnuaire = (annuaireList) => {
         p.prenom
       }\n- Téléphone : ${p.telephone}`)
   );
-  alert(list);
+  return alert(list);
 };
 
 /**
