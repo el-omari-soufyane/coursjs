@@ -1,3 +1,6 @@
+/*
+* Préférer le === pour les compraraisons en lieu et place du ==
+*/
 const options = ["pierre", "feuille", "ciseau"];
 
 /**
@@ -6,7 +9,9 @@ const options = ["pierre", "feuille", "ciseau"];
  *
  */
 const choixUserFunction = () => {
-  let option = null;
+
+  //let option; au lieu de let option = null;
+  let option;
   while (!option || !options.includes(option)) {
     option = prompt(
       "Quelle option ? [pierre - feuille - ciseau]"
@@ -25,25 +30,25 @@ const choixComputerFunction = () => options[Math.floor(Math.random() * 3)];
 /**
  * 
  * Comparer les deux choix
- * @return {-1} si l'ordinateur qui a gangé
+ * @return {-1} si l'ordinateur a gagné
  * @return {0} si les choix sont égaux
- * @return {1} si l'utilisateur qui a gagné
+ * @return {1} si l'utilisateur a gagné
  *
  */
 const evaluateUser = (choixUser, choixComputer) => {
-  if (choixUser == choixComputer) return 0;
+  if (choixUser === choixComputer) return 0;
   let score = -1;
   switch (choixUser) {
     case "pierre":
-      if (choixComputer == "ciseau") score = 1;
+      if (choixComputer === "ciseau") score = 1;
       break;
 
     case "feuille":
-      if (choixComputer == "pierre") score = 1;
+      if (choixComputer === "pierre") score = 1;
       break;
 
     case "ciseau":
-      if (choixComputer == "feuille") score = 1;
+      if (choixComputer === "feuille") score = 1;
       break;
   }
   return score;
@@ -63,8 +68,8 @@ const chifoumiGame = () => {
     const choixComputer = choixComputerFunction();
 
     const result = evaluateUser(choixUser, choixComputer);
-    if (result == 1) scoreUser += 1;
-    else if (result == -1) scoreComputer += 1;
+    if (result === 1) scoreUser += 1;
+    else if (result === -1) scoreComputer += 1;
 
     console.log("\nGame #" + manche);
     console.log("User choix : " + choixUser);
